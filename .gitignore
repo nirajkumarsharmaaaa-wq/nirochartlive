@@ -1,0 +1,25 @@
+# Node & React
+node_modules/
+dist/
+npm-debug.log
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Uploads & Media (Taaki dusro ki images repo me na jayein)
+uploads/
+backend/uploads/
+
+# Security (Database aur API Keys)
+.env
+*.db
+nirochart.db
+nirochart.db-journal
+
+# OS Files
+.DS_Store
+Thumbs.db
