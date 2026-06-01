@@ -304,7 +304,7 @@ def update_stream_thumbnail(data: ThumbnailData, db: Session = Depends(get_db)):
         with open(file_path, "wb") as f:
             f.write(image_data)
         
-        BASE_URL = os.getenv("RENDER_EXTERNAL_URL", "http://localhost:8000")
+        BASE_URL = os.getenv("RENDER_EXTERNAL_URL", "${import.meta.env.VITE_API_URL}")
         thumbnail_url = f"{BASE_URL}/uploads/thumbnails/{data.room_id}.jpg"
 
         # Existing stream check
