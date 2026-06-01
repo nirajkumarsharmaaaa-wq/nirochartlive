@@ -82,11 +82,17 @@ class ViewerLoginRequest(BaseModel):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173"
+                   "https://nirochartlive-web.onrender.com"
+                   ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+def read_root():
+    return {"status": "Nirochart API is live and running!"}
 
 UPLOAD_DIR = Path("uploads/kyc_documents")
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
