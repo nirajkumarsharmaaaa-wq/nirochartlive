@@ -30,6 +30,12 @@ from database import engine, Base, get_db
 import models
 import models
 
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "API running"}
+
 Base.metadata.create_all(bind=engine)
 
 security = HTTPBearer()
